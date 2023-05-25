@@ -5,7 +5,6 @@ const path = require("path");
 const posts = require('./model/posts');
 const routes = require('./routes/routes')
 app.use(express.json())
-app.use("/",express.static(path.join(__dirname,'public')))
 app.use('/routes',routes)
 
 app.listen(port, () => {

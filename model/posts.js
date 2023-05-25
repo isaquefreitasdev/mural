@@ -19,6 +19,15 @@ module.exports = {
     }
     this.posts.push({ id: generateID(), title, description });
   },
+  updatePost(id, title, description) {
+    const post = this.posts.find((post) => post.id === id);
+    if (post) {
+      post.title = title;
+      post.description = description;
+      return true; // Indicate successful update
+    }
+    return false; // Indicate post not found
+  },
   deletePost(id) {
     const index = this.posts.findIndex((post) => post.id === id);
     if (index !== -1) {
